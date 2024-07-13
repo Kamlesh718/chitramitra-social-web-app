@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Certainly! Here’s a combined color theme for both light and dark modes for your social media app "Chitramitra":
+
+### Light Mode Theme Colors:
+
+- **Primary Color:** Turquoise (#1ABC9C)
+- **Secondary Colors:** Deep Blue (#34495E), Light Coral (#F08080)
+- **Accent Colors:** White (#FFFFFF), Silver (#BDC3C7)
+
+### Dark Mode Theme Colors:
+
+- **Primary Color:** Deep Teal (#1A2B2C)
+- **Secondary Colors:** Light Turquoise (#16A085), Soft Coral (#E57373)
+- **Accent Colors:** Off-White (#ECECEC), Medium Gray (#7F8C8D)
+
+### Usage:
+
+#### Light Mode:
+- **Turquoise (#1ABC9C):** Main UI elements like header, footer, and primary buttons.
+- **Deep Blue (#34495E):** Text, icons, and important information.
+- **Light Coral (#F08080):** Notification badges, likes, and interactive elements.
+- **White (#FFFFFF):** Backgrounds to keep the interface clean and uncluttered.
+- **Silver (#BDC3C7):** Secondary text, borders, and subtle separators.
+
+#### Dark Mode:
+- **Deep Teal (#1A2B2C):** Main background color to create a dark and immersive interface.
+- **Light Turquoise (#16A085):** Highlights, primary buttons, and interactive elements.
+- **Soft Coral (#E57373):** Notification badges, likes, and other attention-grabbing elements.
+- **Off-White (#ECECEC):** Text and icons for readability and clarity.
+- **Medium Gray (#7F8C8D):** Secondary text, borders, and subtle separators.
+
+### Example Implementations:
+
+1. **Light Mode UI Example:**
+   - **Header/Footer:** Turquoise (#1ABC9C)
+   - **Text and Icons:** Deep Blue (#34495E)
+   - **Interactive Elements:** Light Coral (#F08080)
+   - **Background:** White (#FFFFFF)
+   - **Secondary Elements:** Silver (#BDC3C7)
+
+2. **Dark Mode UI Example:**
+   - **Background:** Deep Teal (#1A2B2C)
+   - **Highlights and Buttons:** Light Turquoise (#16A085)
+   - **Notifications and Badges:** Soft Coral (#E57373)
+   - **Text and Icons:** Off-White (#ECECEC)
+   - **Secondary Elements:** Medium Gray (#7F8C8D)
+
+This integrated theme provides a cohesive and user-friendly experience across both light and dark modes, maintaining the app's vibrant and inviting aesthetic.
+*/
+
+:root {
+  /* Light Mode Colors */
+  --primary-color: #1abc9c;
+  --secondary-color: #34495e;
+  --highlight-color: #f08080;
+  --background-color: #e8f8f5;
+  --accent-color: #bdc3c7;
+  --text-color: #34495e;
+  --text-color2: #050709;
+  --button-text: #ffffff;
+  --border-color: #bdc3c7;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Colors */
+  --primary-color: #1abc9c;
+  --secondary-color: #16a085;
+  --highlight-color: #e57373;
+  --background-color: #1a2b2c;
+  --accent-color: #7f8c8d;
+  --text-color: #ececec;
+  --text-color2: #ececec;
+  --button-text: #1a2b2c;
+  --border-color: #7f8c8d;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  background-color: var(--primary-color);
+  color: var(--button-text);
+}
+
+button {
+  /* background-color: var(--highlight-color); */
+
+  color: var(--button-text);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.border-box {
+  border: 1px solid var(--border-color);
+}
+
+.textarea-no-resize {
+  resize: none;
+}
+
+.comment {
+  color: var(--text-color2);
+}
+
+.active {
+  color: var(--text-color);
+}
+
+.search-bar {
+  background-color: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Avatar animation */
+.avatar-container {
+  border: 3px solid #1abc9c;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.avatar-container:hover {
+  border-color: transparent;
+  animation: rotateBorder 2s linear infinite;
+}
+
+@keyframes rotateBorder {
+  0% {
+    border-color: #1abc9c;
+  }
+  25% {
+    border-color: #3498db;
+  }
+  50% {
+    border-color: #9b59b6;
+  }
+  75% {
+    border-color: #e74c3c;
+  }
+  100% {
+    border-color: #1abc9c;
+  }
+}
