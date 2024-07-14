@@ -34,7 +34,7 @@ const CreatePost = () => {
         <Heading>Add Post</Heading>
         <input
           type="file"
-          accept="image/*, video/*"
+          accept="image/*"
           onChange={(e) => setImage(e.target.files[0])}
           className="block w-full text-sm text-[#1abc9c]
         file:mr-4 file:py-2 file:px-4 lg:w-1/3
