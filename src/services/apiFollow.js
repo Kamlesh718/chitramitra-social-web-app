@@ -64,7 +64,7 @@ export async function followUser({
         followed_avatar,
         followed_id,
         follower_id,
-        unique_id: `-${follower_username}**${followed_username}-`,
+        unique_id: `-${follower_id}**${followed_id}-`,
         status: true,
       });
 

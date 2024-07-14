@@ -5,7 +5,7 @@ import { useUserData } from "../hooks/profile/useUserData";
 
 function CommentBox({ postId }) {
   const { username } = useUsername();
-  const { profileImage } = useUserData();
+  const { profileImage, userId } = useUserData();
   const [comment, setComment] = useState("");
   const { addComment, isAddingComment } = useAddComments(postId);
   const handleSubmit = function (e) {
@@ -15,6 +15,7 @@ function CommentBox({ postId }) {
       comment,
       username: username?.username,
       avatar: profileImage,
+      userId,
     };
     addComment(formData);
     setComment("");

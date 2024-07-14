@@ -289,13 +289,20 @@ export async function fetchComments(postId) {
   return data;
 }
 
-export async function addComments({ postId, comment, username, avatar }) {
+export async function addComments({
+  postId,
+  comment,
+  username,
+  avatar,
+  userId,
+}) {
   const { error } = await supabase.from("comments").insert([
     {
       post_id: postId,
       comment,
       username,
       avatar,
+      user_id: userId,
     },
   ]);
 

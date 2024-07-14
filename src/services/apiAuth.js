@@ -113,9 +113,15 @@ export async function updateUsername({ id, username }) {
       .update({ username: username })
       .eq("user_id", id);
 
+    const { error: commentError } = await supabase
+      .from("comments")
+      .update({ username: username })
+      .eq("user_id", id);
+
     if (followError1) throw new Error(followError1.message);
     if (followError2) throw new Error(followError2.message);
     if (postError) throw new Error(followError2.message);
+    if (commentError) throw new Error(followError2.message);
 
     if (error) throw new Error(error);
     return data;

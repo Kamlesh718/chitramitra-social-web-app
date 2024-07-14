@@ -7,6 +7,7 @@ import { useFollowUser } from "../hooks/follow/useFollowUser";
 import { useUnfollowUser } from "../hooks/profile/useUnfollowUser";
 import { useFetchStatus } from "../hooks/follow/useFetchStatus";
 import { useFetchPosts } from "../hooks/posts/useFetchPosts";
+import { useUserData } from "../hooks/profile/useUserData";
 
 const ExploreContext = createContext();
 
@@ -16,18 +17,19 @@ function ExploreProvider({ children }) {
   const [searchResults, setSearchResults] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [uniqueId, setUniqueId] = useState("");
-
+  const { userId } = useUserData();
   const { username } = useUsername();
   const { followUser } = useFollowUser();
   const { unfollowUser } = useUnfollowUser();
   const { getStatus, isFetchingStatus } = useFetchStatus(uniqueId);
 
   useEffect(() => {
-    const followed_username = searchResults?.map((u) => u.username);
-    const unique_id = `-${username?.username}**${followed_username}-`;
+    const followed_id = searchResults?.map((u) => u.id);
+
+    const unique_id = `-${userId}**${followed_id}-`;
 
     setUniqueId(unique_id);
-  }, [searchResults, username]);
+  }, [searchResults, userId]);
 
   useEffect(() => {
     let isCancelled = false;
