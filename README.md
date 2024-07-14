@@ -1,7 +1,9 @@
 # ChitraMitra - Social Media Web App
 
 **Live Site**: https://chitramitra.vercel.app/
-**Demo Login**: email:test@gmail.com pass:test12345
+**Demo Login**: 
+email:test@gmail.com
+pass:test12345
 
 ChitraMitra is a dynamic and fully responsive social media web application, crafted with cutting-edge technologies like React, Supabase, and Tailwind CSS. With ChitraMitra, users can effortlessly share posts, follow and unfollow others, and engage in seamless messaging with their network.
 
