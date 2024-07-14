@@ -68,6 +68,7 @@ Experience a personalized homepage feed featuring posts from users you follow, a
 - **Responsive Grid Layout**: View posts in a visually appealing grid format.
 - **Messaging**:Send, receive, and delete messages with users you follow.
 - **Profile Updates**: Update your profile across the app.
+- **Dark Mode**: Switch between Dark/Light mode
 
 ## Tech Stack
 
