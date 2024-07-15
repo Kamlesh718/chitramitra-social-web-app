@@ -22,10 +22,10 @@ Experience a personalized homepage feed featuring posts from users you follow, a
 ![Homepage](https://github.com/user-attachments/assets/0c830abb-be56-413d-ac5c-019f7b53a946)
 
 **Explore**
-![Explore](https://github.com/user-attachments/assets/5b9b31e3-b1dc-470f-9a64-27286586ee09)
+![Explore2](https://github.com/user-attachments/assets/2b869080-4520-404c-b3e3-4f6f33214318)
 
 **Follow-Unfollow**
-![Follow](https://github.com/user-attachments/assets/af37a1e9-ca6e-4aa7-8cf5-17f8ecd77ec3)
+![Follow2](https://github.com/user-attachments/assets/f554b73b-5f7a-4a6e-8cc6-da69468dcb45)
 
 **Comments**
 ![Comments](https://github.com/user-attachments/assets/e4151e68-6975-42b6-a764-1d1d0927a829)
