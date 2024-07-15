@@ -8,10 +8,10 @@ const Slogan = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowSlogan(false);
-    }, 3000); // Display for 3 seconds
+    }, 3000);
 
     return () => clearTimeout(timeout);
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+  }, []);
 
   return (
     <div

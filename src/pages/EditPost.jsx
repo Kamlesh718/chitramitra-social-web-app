@@ -4,6 +4,7 @@ import { useGetSinglePostData } from "../hooks/posts/useGetSinglePostData";
 import { useParams } from "react-router-dom";
 import { useUpdatePostCaption } from "../hooks/posts/useUpdatePostCaption";
 import { useUpdatePostImage } from "../hooks/profile/useUpdatePostImage";
+import { HeartIcon } from "@heroicons/react/24/solid";
 
 function EditPost() {
   const { postid } = useParams();
@@ -13,11 +14,13 @@ function EditPost() {
   const [postImage, setPostImage] = useState("");
   const [oldPostImage, setOldPostImage] = useState("");
   const [caption, setCaption] = useState("");
+  const [likeNo, setLikesNo] = useState(0);
 
   useEffect(() => {
     if (getSinglePostData) {
       setCaption(getSinglePostData.caption);
       setOldPostImage(getSinglePostData.image);
+      setLikesNo(getSinglePostData?.likes_count);
     }
   }, [getSinglePostData]);
 
@@ -44,6 +47,10 @@ function EditPost() {
   return (
     <div className="p-4 rounded-lg max-w-md mx-auto mt-8 mb-12">
       <Heading>Edit Post</Heading>
+      <span className="flex gap-2">
+        <HeartIcon className="size-6 md:size-8 bg-red-500 p-1" />
+        <p className="font-semibold">{likeNo}</p>
+      </span>
 
       <form onSubmit={handleImageSubmit}>
         <div className="mb-4">

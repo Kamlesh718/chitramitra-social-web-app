@@ -66,7 +66,7 @@ export async function getIndividualPosts(username) {
 export async function getSinglePostData(id) {
   const { data, error } = await supabase
     .from("posts")
-    .select("image,caption")
+    .select("image,caption,likes_count")
     .eq("id", id)
     .single();
 

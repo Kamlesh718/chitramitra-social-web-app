@@ -48,6 +48,7 @@ function Comments({ postId }) {
         className="size-8 cursor-pointer"
         onClick={openComments}
       />
+      <span className="font-medium">{getComments?.length}</span>
 
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-700 bg-opacity-50 backdrop-blur-sm  font-medium tracking-wider comment">

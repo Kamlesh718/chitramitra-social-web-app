@@ -174,6 +174,15 @@ export async function updateProfileImage({ id, avatar, oldAvatar }) {
     .eq("id", id);
 
   if (error3) throw new Error(error2.message);
+  // Update avatar in comments table
+  const { data: updatedAvatar3, error: error4 } = await supabase
+    .from("comments")
+    .update({
+      avatar: `${supabaseUrl}/storage/v1/object/public/profile-image/${fileName}`,
+    })
+    .eq("user_id", id);
+
+  if (error4) throw new Error(error2.message);
 
   // Update avatar in follows table
   const { error: followError1 } = await supabase
@@ -201,7 +210,7 @@ export async function updateProfileImage({ id, avatar, oldAvatar }) {
   if (followError2) throw new Error(followError2.message);
   if (postError) throw new Error(postError.message);
 
-  return updatedAvatar2, updatedAvatar;
+  return updatedAvatar2, updatedAvatar, updatedAvatar3;
 }
 
 export async function updatePassword(password) {
