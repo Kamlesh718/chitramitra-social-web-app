@@ -7,6 +7,9 @@ export async function signup({
   profileImage,
   fullName,
 }) {
+  if (username.length <= 2)
+    throw new Error("Username should be more than 2 chars");
+
   const { data: existingUsername, error: existingUsernameError } =
     await supabase.from("profiles").select("username").eq("username", username);
 
